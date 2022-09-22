@@ -7,16 +7,14 @@ import { FaFacebook, FaTwitter, FaYoutube, FaPinterest, FaInstagram } from 'reac
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
-    const [logo, setLogo] = useState(false)
     const handleNav = () => {
         setNav(!nav)
-        setLogo(!logo)
     }
 
     return (
-        <div className='flex justify-between items-center h-20 px-4'>
+        <div className='flex justify-between items-center w-full h-20 px-4 absolute z-10'>
             <div>
-                <h1 className={logo ? 'hidden' : 'block'}>BEACHES.</h1>
+                <h1 className={`${nav ? 'hidden' : 'block text-white'}`}>BEACHES.</h1>
             </div>
 
             <ul className='hidden md:flex'>
@@ -35,12 +33,12 @@ const Navbar = () => {
 
             {/* Hamburger */}
             <div onClick={handleNav} className='md:hidden z-10'>
-                {nav ? <AiOutlineClose className='text-black' size={20} /> : <HiOutlineMenuAlt4 className='text-black' size={20} />}
+                {nav ? <AiOutlineClose className='text-black' size={20} /> : <HiOutlineMenuAlt4 className='text-white' size={20} />}
             </div>
 
             {/* Mobile menu dropdown */}
-            <div className={`${nav ? 'top-0' : 'top-[-100%]'} absolute left-0 w-full bg-gray-100/90 px-4 py-7 flex flex-col`}>
-                <ul>
+            <div className={`${nav ? 'top-0' : 'top-[-100%]'} absolute left-0 w-full text-black bg-gray-100/90 px-4 py-7 flex flex-col`}>
+                <ul className={nav ? 'block' : 'hidden'}>
                     <h1>BEACHES.</h1>
 
                     <li className='border-b'>Home</li>
@@ -60,6 +58,7 @@ const Navbar = () => {
                         <FaYoutube className='icon' />
                         <FaPinterest className='icon' />
                         <FaInstagram className='icon' />
+                        <a href="https://github.com/ceyhun-celik/reactjs-travel-landing-page" target="_blank" rel="noreferrer"><BsGithub className='icon' /></a>
                     </div>
                 </ul>
             </div>
