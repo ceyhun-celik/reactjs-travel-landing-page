@@ -17,7 +17,7 @@ const Navbar = () => {
                 <h1 className={`${nav ? 'hidden' : 'block text-white'}`}>BEACHES.</h1>
             </div>
 
-            <ul className='hidden md:flex'>
+            <ul className='hidden md:flex text-white'>
                 <li>Home</li>
                 <li>Destinations</li>
                 <li>Travel</li>
@@ -25,7 +25,7 @@ const Navbar = () => {
                 <li>Book</li>
             </ul>
 
-            <div className='hidden md:flex'>
+            <div className='hidden md:flex text-white'>
                 <BiSearch className='mr-1' size={20} />
                 <BsPerson className='mr-1' size={20} />
                 <a href="https://github.com/ceyhun-celik/reactjs-travel-landing-page" target="_blank" rel="noreferrer"><BsGithub /></a>
